@@ -1,0 +1,2542 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Faisal Ehsan - Software Engineering Student Portfolio">
+
+    <title>Faisal Ehsan | Software Engineering Portfolio</title>
+
+    <style>
+        /* =========================================================
+   RESET
+========================================================= */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07111f;
+            color: #f5f7ff;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+        
+        button {
+            cursor: pointer;
+        }
+        /* =========================================================
+   COLORS
+========================================================= */
+        
+         :root {
+            --primary: #6366f1;
+            --primary2: #06b6d4;
+            --bg: #07111f;
+            --card: #0f1b2d;
+            --card2: #14243a;
+            --text: #f5f7ff;
+            --muted: #9eabc0;
+            --border: rgba(255, 255, 255, .10);
+            --success: #22c55e;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+        }
+        /* =========================================================
+   GENERAL
+========================================================= */
+        
+        .container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+        
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 22px;
+        }
+        
+        .hidden {
+            display: none!important;
+        }
+        /* =========================================================
+   HEADER
+========================================================= */
+        
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 17, 31, .90);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+        }
+        
+        .logo span {
+            color: var(--primary2);
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            color: #c8d4e5;
+            font-weight: 600;
+            transition: .2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary2);
+        }
+        
+        .menu-btn {
+            display: none;
+            background: #14243a;
+            border: 1px solid var(--border);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 9px;
+        }
+        /* =========================================================
+   BUTTONS
+========================================================= */
+        
+        .btn {
+            border: 0;
+            border-radius: 10px;
+            padding: 11px 18px;
+            font-weight: 700;
+            transition: .2s;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: .92;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary2));
+            color: white;
+            box-shadow: 0 8px 25px rgba(6, 182, 212, .15);
+        }
+        
+        .btn-secondary {
+            background: #172a43;
+            color: white;
+            border: 1px solid var(--border);
+        }
+        
+        .btn-success {
+            background: var(--success);
+            color: #05200f;
+        }
+        
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+        
+        .btn-warning {
+            background: var(--warning);
+            color: #201300;
+        }
+        /* =========================================================
+   HERO
+========================================================= */
+        
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            background: radial-gradient( circle at 85% 20%, rgba(6, 182, 212, .17), transparent 30%), radial-gradient( circle at 15% 75%, rgba(99, 102, 241, .17), transparent 30%);
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr .75fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 8px 13px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            color: #67e8f9;
+            background: rgba(6, 182, 212, .10);
+            border: 1px solid rgba(6, 182, 212, .30);
+            font-weight: 700;
+        }
+        
+        .hero h1 {
+            font-size: clamp(43px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 span {
+            color: var(--primary2);
+        }
+        
+        .hero p {
+            color: var(--muted);
+            font-size: 19px;
+            max-width: 680px;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+        
+        .hero-card {
+            background: linear-gradient(145deg, #152943, #0d182a);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .30);
+        }
+        
+        .avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            margin: auto auto 20px;
+            overflow: hidden;
+            border: 4px solid #06b6d4;
+            box-shadow: 0 0 35px rgba(6, 182, 212, .30);
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        /* =========================================================
+   SECTION TITLES
+========================================================= */
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+        }
+        
+        .section-title p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+        /* =========================================================
+   ABOUT
+========================================================= */
+        
+        .about-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 27px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+        }
+        
+        .card h3 {
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: var(--muted);
+        }
+        /* =========================================================
+   SKILLS
+========================================================= */
+        
+        .skills-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .skill {
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: .25s;
+        }
+        
+        .skill:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, .40);
+        }
+        
+        .skill-icon {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+        /* =========================================================
+   PROJECTS
+========================================================= */
+        
+        .projects-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .project {
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: .25s;
+        }
+        
+        .project:hover {
+            transform: translateY(-7px);
+            border-color: rgba(6, 182, 212, .45);
+        }
+        
+        .project-top {
+            height: 155px;
+            display: grid;
+            place-items: center;
+            font-size: 55px;
+            background: linear-gradient( 135deg, #272b63, #12415a);
+            position: relative;
+        }
+        
+        .project-top::after {
+            content: "";
+            position: absolute;
+            width: 160%;
+            height: 90px;
+            bottom: -50px;
+            background: rgba(255, 255, 255, .06);
+            transform: rotate(-7deg);
+        }
+        
+        .project-body {
+            padding: 23px;
+        }
+        
+        .project-body h3 {
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+        
+        .project-body p {
+            color: var(--muted);
+            font-size: 14px;
+            min-height: 65px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 14px 0;
+        }
+        
+        .tag {
+            background: #1a2942;
+            color: #9feafa;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        
+        .price {
+            color: #86efac;
+            font-size: 18px;
+            font-weight: 800;
+            margin: 10px 0 4px;
+        }
+        
+        .duration {
+            color: #aebbd0;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        /* =========================================================
+   CONTACT
+========================================================= */
+        
+        .contact-grid {
+            grid-template-columns: .8fr 1.2fr;
+        }
+        
+        .contact-info .info {
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .info small {
+            display: block;
+            color: var(--muted);
+        }
+        
+        form {
+            display: grid;
+            gap: 14px;
+        }
+        
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: #091525;
+            color: white;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 13px 14px;
+            outline: none;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary2);
+            box-shadow: 0 0 0 3px rgba(6, 182, 212, .10);
+        }
+        
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        /* =========================================================
+   FOOTER
+========================================================= */
+        
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+        }
+        /* =========================================================
+   MODALS
+========================================================= */
+        
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .80);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal.show {
+            display: flex;
+        }
+        
+        .modal-box {
+            width: min(820px, 100%);
+            max-height: 90vh;
+            overflow: auto;
+            background: #101c2f;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 14px;
+            width: 38px;
+            height: 38px;
+            background: #1b2a43;
+            border: 0;
+            color: white;
+            border-radius: 8px;
+            font-size: 22px;
+        }
+        
+        .detail {
+            color: var(--muted);
+            margin: 15px 0;
+        }
+        
+        .feature-list {
+            padding-left: 22px;
+            color: #d1dbea;
+        }
+        
+        .feature-list li {
+            margin: 7px 0;
+        }
+        /* =========================================================
+   ADMIN
+========================================================= */
+        
+        .admin-list {
+            display: grid;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .admin-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background: #142239;
+            border: 1px solid var(--border);
+            padding: 15px;
+            border-radius: 12px;
+        }
+        
+        .admin-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .admin-note {
+            background: #17263d;
+            padding: 13px;
+            border-radius: 10px;
+            color: #b9c9dc;
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+        
+        .message {
+            padding: 10px 13px;
+            border-radius: 8px;
+            margin: 10px 0;
+            background: #17263d;
+            color: #d9f4ff;
+        }
+        
+        .empty {
+            grid-column: 1/-1;
+            text-align: center;
+            color: var(--muted);
+            padding: 35px;
+        }
+        /* =========================================================
+   TOAST
+========================================================= */
+        
+        .toast {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 5000;
+            background: #102b42;
+            color: white;
+            border: 1px solid var(--border);
+            padding: 13px 18px;
+            border-radius: 10px;
+            display: none;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, .30);
+        }
+        
+        .toast.show {
+            display: block;
+        }
+        /* =========================================================
+   RESPONSIVE
+========================================================= */
+        
+        @media(max-width:950px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media(max-width:700px) {
+            .menu-btn {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: #081525;
+                padding: 20px;
+                flex-direction: column;
+                border-bottom: 1px solid var(--border);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hero {
+                min-height: auto;
+                padding: 80px 0;
+            }
+            section {
+                padding: 65px 0;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-card {
+                padding: 25px;
+            }
+        }
+        
+        @media(max-width:430px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-actions .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .admin-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+     HEADER
+========================================================= -->
+
+    <header>
+
+        <div class="container nav">
+
+            <a href="#home" class="logo">
+Faisal<span>.</span>
+</a>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#home" onclick="closeMenu()">Home</a>
+
+                <a href="#about" onclick="closeMenu()">About</a>
+
+                <a href="#skills" onclick="closeMenu()">Skills</a>
+
+                <a href="#projects" onclick="closeMenu()">Projects</a>
+
+                <a href="#contact" onclick="closeMenu()">Contact</a>
+
+                <button class="btn btn-secondary" onclick="openAdmin()">
+Admin
+</button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+     MAIN
+========================================================= -->
+
+    <main>
+
+
+        <!-- =========================================================
+     HERO
+========================================================= -->
+
+        <section class="hero" id="home">
+
+            <div class="container hero-grid">
+
+                <div>
+
+                    <div class="badge">
+                        Software Engineering Student
+                    </div>
+
+                    <h1>
+                        Hi, I'm <span>Faisal Ehsan</span>
+                    </h1>
+
+                    <p>
+                        I build modern websites, software systems, mobile applications and digital solutions. Explore my projects, skills and work.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#projects" class="btn btn-primary">
+View My Projects
+</a>
+
+                        <a href="#contact" class="btn btn-secondary">
+Contact Me
+</a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="avatar">
+                        <img src="faisal.jpg.png" alt="Faisal Ehsan">
+                    </div>
+
+                    <h2>
+                        Faisal Ehsan
+                    </h2>
+
+                    <p>
+                        Software Engineering Student
+                    </p>
+
+                    <p style="margin-top:8px;color:#67e8f9">
+                        Web • Software • AI • Mobile
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     ABOUT
+========================================================= -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        About Me
+                    </h2>
+
+                    <p>
+                        A little information about me
+                    </p>
+
+                </div>
+
+
+                <div class="grid about-grid">
+
+                    <div class="card">
+
+                        <h3>
+                            Who I Am
+                        </h3>
+
+                        <p>
+                            My name is Faisal Ehsan. I am a Software Engineering student interested in web development, software development, mobile applications, databases and artificial intelligence.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>
+                            My Goal
+                        </h3>
+
+                        <p>
+                            My goal is to improve my programming skills, build useful real-world projects and become a professional software engineer.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     SKILLS
+========================================================= -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        My Skills
+                    </h2>
+
+                    <p>
+                        Technologies and areas I am learning
+                    </p>
+
+                </div>
+
+
+                <div class="grid skills-grid">
+
+                    <div class="skill">
+                        <div class="skill-icon">🌐</div>
+                        <strong>HTML</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">🎨</div>
+                        <strong>CSS</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">⚡</div>
+                        <strong>JavaScript</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">☕</div>
+                        <strong>Java</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">💻</div>
+                        <strong>C#</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">🗄️</div>
+                        <strong>SQL</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">📱</div>
+                        <strong>Mobile Apps</strong>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">🤖</div>
+                        <strong>AI</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        My Projects
+                    </h2>
+
+                    <p>
+                        Explore my projects, technologies, features and estimated budgets.
+                    </p>
+
+                </div>
+
+                <div class="grid projects-grid" id="projectGrid">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+     CONTACT
+========================================================= -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        Contact Me
+                    </h2>
+
+                    <p>
+                        Let's connect
+                    </p>
+
+                </div>
+
+
+                <div class="grid contact-grid">
+
+
+                    <div class="card contact-info">
+
+                        <h3>
+                            Contact Information
+                        </h3>
+
+
+                        <div class="info">
+
+                            <small>
+Phone
+</small>
+
+                            <strong>
+03349369367
+</strong>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <small>
+Email
+</small>
+
+                            <strong>
+faisalehsan2006@gmail.com
+</strong>
+
+                        </div>
+
+
+                        <div class="info">
+
+                            <small>
+Location
+</small>
+
+                            <strong>
+Pakistan
+</strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <h3>
+                            Send a Message
+                        </h3>
+
+                        <form onsubmit="sendMessage(event)">
+
+                            <input id="contactName" type="text" placeholder="Your Name" required>
+
+                            <input id="contactEmail" type="email" placeholder="Your Email" required>
+
+                            <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+
+                            <button class="btn btn-primary" type="submit">
+
+Send Message
+
+</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © <span id="year"></span> Faisal Ehsan. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+     PROJECT DETAIL MODAL
+========================================================= -->
+
+    <div class="modal" id="projectModal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeModal('projectModal')">
+×
+</button>
+
+
+            <h2 id="detailTitle">
+                Project
+            </h2>
+
+
+            <p id="detailShort" class="detail">
+            </p>
+
+
+            <div class="tags" id="detailTags">
+            </div>
+
+
+            <div class="price">
+                💰 Estimated Budget:
+                <span id="detailPrice"></span>
+            </div>
+
+
+            <div class="duration">
+                ⏱ Estimated Duration:
+                <span id="detailDuration"></span>
+            </div>
+
+
+            <h3>
+                Full Details
+            </h3>
+
+            <p id="detailDescription" class="detail">
+            </p>
+
+
+            <h3>
+                Features
+            </h3>
+
+            <ul id="detailFeatures" class="feature-list">
+            </ul>
+
+
+            <div style="margin-top:25px">
+
+                <a id="detailLink" class="btn btn-primary" href="#" target="_blank">
+
+Open Live Project
+
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     ADMIN LOGIN
+========================================================= -->
+
+    <div class="modal" id="adminLoginModal">
+
+        <div class="modal-box" style="max-width:450px">
+
+            <button class="close" onclick="closeModal('adminLoginModal')">
+×
+</button>
+
+
+            <h2>
+                Admin Login
+            </h2>
+
+            <p class="detail">
+                Login to add, edit or delete projects.
+            </p>
+
+
+            <div id="loginMessage">
+            </div>
+
+
+            <form onsubmit="loginAdmin(event)">
+
+                <input id="adminUsername" type="text" placeholder="Username" required>
+
+                <input id="adminPassword" type="password" placeholder="Password" required>
+
+                <button class="btn btn-primary" type="submit">
+
+Login
+
+</button>
+
+            </form>
+
+
+            <div class="admin-note" style="margin-top:15px">
+
+                Demo Login:<br> Username:
+                <b>admin</b>
+
+                <br> Password:
+                <b>12345</b>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+     ADMIN PANEL
+========================================================= -->
+
+    <div class="modal" id="adminModal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeAdmin()">
+×
+</button>
+
+
+            <h2>
+                Admin Panel
+            </h2>
+
+            <p class="detail">
+                Manage your portfolio projects.
+            </p>
+
+
+            <div class="admin-note">
+
+                ⚠️ This version stores projects in this browser using localStorage. It is not a real online database. For a real online website where changes appear on every device, you need a backend and database.
+
+            </div>
+
+
+            <button class="btn btn-primary" onclick="showProjectForm()">
+
++ Add New Project
+
+</button>
+
+
+            <!-- PROJECT FORM -->
+
+            <div id="adminProjectForm" class="card hidden" style="margin-top:20px">
+
+                <h3 id="formTitle">
+                    Add Project
+                </h3>
+
+
+                <form onsubmit="saveProject(event)">
+
+                    <input type="hidden" id="editProjectId">
+
+
+                    <input id="projectName" type="text" placeholder="Project Name" required>
+
+
+                    <input id="projectIcon" type="text" placeholder="Project Icon e.g. 🌐" value="💻">
+
+
+                    <input id="projectShort" type="text" placeholder="Short Description" required>
+
+
+                    <textarea id="projectDescription" placeholder="Full Project Details" required></textarea>
+
+
+                    <input id="projectTech" type="text" placeholder="Technologies: HTML, CSS, JavaScript" required>
+
+
+                    <textarea id="projectFeatures" placeholder="Features, one per line">
+</textarea>
+
+
+                    <input id="projectPrice" type="text" placeholder="Estimated Price e.g. PKR 100,000" required>
+
+
+                    <input id="projectDuration" type="text" placeholder="Estimated Duration e.g. 2 months" required>
+
+
+                    <input id="projectLink" type="url" placeholder="Live Project URL (optional)">
+
+
+                    <div style="display:flex;gap:10px;flex-wrap:wrap">
+
+                        <button class="btn btn-success" type="submit">
+
+Save Project
+
+</button>
+
+
+                        <button class="btn btn-secondary" type="button" onclick="cancelProjectForm()">
+
+Cancel
+
+</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div id="adminProjectList" class="admin-list">
+            </div>
+
+
+            <button class="btn btn-danger" onclick="logoutAdmin()">
+
+Logout
+
+</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast">
+    </div>
+
+
+    <!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+    <script>
+        /* =========================================================
+                                                   DEFAULT PROJECTS
+                                                ========================================================= */
+
+        const defaultProjects = [
+
+            {
+                id: 1,
+
+                name: "Portfolio Website",
+
+                icon: "🌐",
+
+                short: "My personal responsive portfolio website.",
+
+                description: "A modern personal portfolio website where visitors can learn about me, view my skills, explore my projects and contact me.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+
+                features: [
+                    "Responsive design",
+                    "Project details",
+                    "Contact section",
+                    "Mobile friendly",
+                    "Modern user interface"
+                ],
+
+                price: "PKR 25,000",
+
+                duration: "1–2 weeks",
+
+                link: ""
+            },
+
+
+            {
+                id: 2,
+
+                name: "Birthday Website",
+
+                icon: "🎂",
+
+                short: "A beautiful interactive birthday wish website.",
+
+                description: "A creative birthday website with animations, messages, buttons, pictures, music and an ending page.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+
+                features: [
+                    "Birthday messages",
+                    "Animations",
+                    "Interactive buttons",
+                    "Mobile responsive",
+                    "Music support",
+                    "Ending page"
+                ],
+
+                price: "PKR 15,000",
+
+                duration: "1 week",
+
+                link: ""
+            },
+
+
+            {
+                id: 3,
+
+                name: "Mobile App",
+
+                icon: "📱",
+
+                short: "A mobile application project.",
+
+                description: "A mobile application concept designed to provide useful features through a simple and responsive mobile interface.",
+
+                tech: [
+                    "Flutter",
+                    "Dart"
+                ],
+
+                features: [
+                    "Mobile interface",
+                    "Responsive screens",
+                    "Navigation",
+                    "User friendly design"
+                ],
+
+                price: "PKR 80,000",
+
+                duration: "1–2 months",
+
+                link: ""
+            },
+
+
+            {
+                id: 4,
+
+                name: "Accounting System",
+
+                icon: "💰",
+
+                short: "Business accounting management system.",
+
+                description: "An accounting system designed to manage customers, transactions, records, payments and business information.",
+
+                tech: [
+                    "C#",
+                    "ASP.NET Core",
+                    "SQL Server"
+                ],
+
+                features: [
+                    "Customer management",
+                    "Transaction management",
+                    "Payment records",
+                    "Reports",
+                    "Database support"
+                ],
+
+                price: "PKR 250,000",
+
+                duration: "2–4 months",
+
+                link: ""
+            },
+
+
+            {
+                id: 5,
+
+                name: "Student Management System",
+
+                icon: "🎓",
+
+                short: "A system for managing students and academic records.",
+
+                description: "A student management system for storing student information, attendance, fees, results and other academic records.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "SQL"
+                ],
+
+                features: [
+                    "Student profiles",
+                    "Attendance",
+                    "Fees",
+                    "Results",
+                    "Search students"
+                ],
+
+                price: "PKR 150,000",
+
+                duration: "1–3 months",
+
+                link: ""
+            },
+
+
+            {
+                id: 6,
+
+                name: "E-Commerce Website",
+
+                icon: "🛒",
+
+                short: "Online shopping website concept.",
+
+                description: "An e-commerce website where users can browse products and view product information through a modern interface.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+
+                features: [
+                    "Product listing",
+                    "Product details",
+                    "Responsive design",
+                    "Shopping interface"
+                ],
+
+                price: "PKR 120,000",
+
+                duration: "1–2 months",
+
+                link: ""
+            },
+
+
+            {
+                id: 7,
+
+                name: "AI Chatbot",
+
+                icon: "🤖",
+
+                short: "An AI chatbot project.",
+
+                description: "A chatbot interface designed for conversations and future integration with an AI API.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "AI"
+                ],
+
+                features: [
+                    "Chat interface",
+                    "Message history",
+                    "Responsive design",
+                    "AI integration ready"
+                ],
+
+                price: "PKR 100,000",
+
+                duration: "1–2 months",
+
+                link: ""
+            },
+
+
+            {
+                id: 8,
+
+                name: "Login & Authentication System",
+
+                icon: "🔐",
+
+                short: "User login and authentication interface.",
+
+                description: "A login system project demonstrating user authentication screens and account access concepts.",
+
+                tech: [
+                    "HTML",
+                    "CSS",
+                    "JavaScript"
+                ],
+
+                features: [
+                    "Login form",
+                    "Password field",
+                    "Validation",
+                    "Responsive design"
+                ],
+
+                price: "PKR 40,000",
+
+                duration: "2–3 weeks",
+
+                link: ""
+            }
+
+        ];
+
+
+        /* =========================================================
+           STORAGE
+        ========================================================= */
+
+        function getProjects() {
+
+            const saved =
+                localStorage.getItem(
+                    "faisalPortfolioProjectsV2"
+                );
+
+            if (saved) {
+
+                try {
+
+                    return JSON.parse(saved);
+
+                } catch (error) {
+
+                    return defaultProjects;
+
+                }
+
+            }
+
+
+            localStorage.setItem(
+                "faisalPortfolioProjectsV2",
+                JSON.stringify(defaultProjects)
+            );
+
+            return defaultProjects;
+
+        }
+
+
+        function saveProjects(projects) {
+
+            localStorage.setItem(
+                "faisalPortfolioProjectsV2",
+                JSON.stringify(projects)
+            );
+
+        }
+
+
+        /* =========================================================
+           SAFE TEXT
+        ========================================================= */
+
+        function esc(text) {
+
+            if (text === null || text === undefined)
+                return "";
+
+            return String(text)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+
+        }
+
+
+        /* =========================================================
+           RENDER PROJECTS
+        ========================================================= */
+
+        function renderProjects() {
+
+            const grid =
+                document.getElementById("projectGrid");
+
+            const projects =
+                getProjects();
+
+
+            if (projects.length === 0) {
+
+                grid.innerHTML =
+                    '<div class="empty">No projects available.</div>';
+
+                return;
+
+            }
+
+
+            grid.innerHTML =
+                projects.map(project => {
+
+                    const tags =
+                        (project.tech || [])
+                        .slice(0, 4)
+                        .map(t =>
+                            `<span class="tag">${esc(t)}</span>`
+                        )
+                        .join("");
+
+
+                    return `
+
+<article class="project">
+
+<div class="project-top">
+
+${esc(project.icon || "💻")}
+
+</div>
+
+
+<div class="project-body">
+
+<h3>
+${esc(project.name)}
+</h3>
+
+
+<p>
+${esc(project.short)}
+</p>
+
+
+<div class="tags">
+${tags}
+</div>
+
+
+<div class="price">
+💰 ${esc(project.price || "Price on request")}
+</div>
+
+
+<div class="duration">
+⏱ ${esc(project.duration || "Contact for duration")}
+</div>
+
+
+<button
+class="btn btn-primary"
+onclick="openProject(${project.id})">
+
+View Details
+
+</button>
+
+</div>
+
+</article>
+
+`;
+
+                }).join("");
+
+        }
+
+
+        /* =========================================================
+           OPEN PROJECT
+        ========================================================= */
+
+        function openProject(id) {
+
+            const project =
+                getProjects().find(
+                    p => p.id === Number(id)
+                );
+
+            if (!project)
+                return;
+
+
+            document.getElementById(
+                "detailTitle"
+            ).textContent = project.name;
+
+
+            document.getElementById(
+                "detailShort"
+            ).textContent = project.short;
+
+
+            document.getElementById(
+                    "detailDescription"
+                ).textContent =
+                project.description;
+
+
+            document.getElementById(
+                    "detailPrice"
+                ).textContent =
+                project.price || "Price on request";
+
+
+            document.getElementById(
+                    "detailDuration"
+                ).textContent =
+                project.duration || "Contact for duration";
+
+
+            document.getElementById(
+                    "detailTags"
+                ).innerHTML =
+                (project.tech || [])
+                .map(t =>
+                    `<span class="tag">${esc(t)}</span>`
+                )
+                .join("");
+
+
+            document.getElementById(
+                    "detailFeatures"
+                ).innerHTML =
+                (project.features || [])
+                .map(f =>
+                    `<li>${esc(f)}</li>`
+                )
+                .join("");
+
+
+            const link =
+                document.getElementById("detailLink");
+
+
+            if (project.link) {
+
+                link.href = project.link;
+                link.style.display = "inline-block";
+
+            } else {
+
+                link.style.display = "none";
+
+            }
+
+
+            document.getElementById(
+                "projectModal"
+            ).classList.add("show");
+
+        }
+
+
+        /* =========================================================
+           MODAL
+        ========================================================= */
+
+        function closeModal(id) {
+
+            document
+                .getElementById(id)
+                .classList.remove("show");
+
+        }
+
+
+        window.addEventListener(
+            "click",
+            function(event) {
+
+                if (
+                    event.target.classList.contains("modal")
+                ) {
+
+                    event.target.classList.remove("show");
+
+                }
+
+            });
+
+
+        /* =========================================================
+           ADMIN LOGIN
+        ========================================================= */
+
+        function openAdmin() {
+
+            const loggedIn =
+                localStorage.getItem(
+                    "faisalAdminLoggedIn"
+                ) === "true";
+
+
+            if (loggedIn) {
+
+                openAdminPanel();
+
+            } else {
+
+                document.getElementById(
+                    "adminLoginModal"
+                ).classList.add("show");
+
+            }
+
+        }
+
+
+        function loginAdmin(event) {
+
+            event.preventDefault();
+
+
+            const username =
+                document.getElementById(
+                    "adminUsername"
+                ).value.trim();
+
+
+            const password =
+                document.getElementById(
+                    "adminPassword"
+                ).value;
+
+
+            if (
+                username === "admin" &&
+                password === "12345"
+            ) {
+
+                localStorage.setItem(
+                    "faisalAdminLoggedIn",
+                    "true"
+                );
+
+
+                closeModal(
+                    "adminLoginModal"
+                );
+
+
+                openAdminPanel();
+
+
+            } else {
+
+                document.getElementById(
+                        "loginMessage"
+                    ).innerHTML =
+                    `
+<div class="message">
+❌ Wrong username or password.
+</div>
+`;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           ADMIN PANEL
+        ========================================================= */
+
+        function openAdminPanel() {
+
+            document.getElementById(
+                "adminModal"
+            ).classList.add("show");
+
+
+            renderAdmin();
+
+        }
+
+
+        function closeAdmin() {
+
+            document.getElementById(
+                "adminModal"
+            ).classList.remove("show");
+
+        }
+
+
+        function logoutAdmin() {
+
+            localStorage.removeItem(
+                "faisalAdminLoggedIn"
+            );
+
+            closeAdmin();
+
+            showToast(
+                "Admin logged out."
+            );
+
+        }
+
+
+        /* =========================================================
+           ADMIN LIST
+        ========================================================= */
+
+        function renderAdmin() {
+
+            const list =
+                document.getElementById(
+                    "adminProjectList"
+                );
+
+            const projects =
+                getProjects();
+
+
+            if (projects.length === 0) {
+
+                list.innerHTML =
+                    `
+<div class="message">
+No projects added yet.
+</div>
+`;
+
+                return;
+
+            }
+
+
+            list.innerHTML =
+                projects.map(project => {
+
+                    return `
+
+<div class="admin-item">
+
+<div>
+
+<strong>
+
+${esc(project.icon || "💻")}
+${esc(project.name)}
+
+</strong>
+
+
+<div
+style="color:#9fb1c7;font-size:13px">
+
+${esc(project.short)}
+
+</div>
+
+
+<div
+style="color:#86efac;font-size:13px;margin-top:5px">
+
+💰 ${esc(project.price || "Price not set")}
+
+</div>
+
+
+<div
+style="color:#aebbd0;font-size:12px">
+
+⏱ ${esc(project.duration || "Duration not set")}
+
+</div>
+
+</div>
+
+
+<div class="admin-actions">
+
+<button
+class="btn btn-secondary"
+onclick="showProjectForm(${project.id})">
+
+Edit
+
+</button>
+
+
+<button
+class="btn btn-danger"
+onclick="deleteProject(${project.id})">
+
+Delete
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+                }).join("");
+
+        }
+
+
+        /* =========================================================
+           PROJECT FORM
+        ========================================================= */
+
+        function showProjectForm(id = null) {
+
+            const form =
+                document.getElementById(
+                    "adminProjectForm"
+                );
+
+            form.classList.remove("hidden");
+
+
+            if (id === null) {
+
+                document.getElementById(
+                        "formTitle"
+                    ).textContent =
+                    "Add Project";
+
+
+                document.getElementById(
+                    "editProjectId"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectName"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectIcon"
+                ).value = "💻";
+
+
+                document.getElementById(
+                    "projectShort"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectDescription"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectTech"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectFeatures"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectPrice"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectDuration"
+                ).value = "";
+
+
+                document.getElementById(
+                    "projectLink"
+                ).value = "";
+
+
+                return;
+
+            }
+
+
+            const project =
+                getProjects().find(
+                    p => p.id === Number(id)
+                );
+
+            if (!project)
+                return;
+
+
+            document.getElementById(
+                    "formTitle"
+                ).textContent =
+                "Edit Project";
+
+
+            document.getElementById(
+                    "editProjectId"
+                ).value =
+                project.id;
+
+
+            document.getElementById(
+                    "projectName"
+                ).value =
+                project.name;
+
+
+            document.getElementById(
+                    "projectIcon"
+                ).value =
+                project.icon || "💻";
+
+
+            document.getElementById(
+                    "projectShort"
+                ).value =
+                project.short;
+
+
+            document.getElementById(
+                    "projectDescription"
+                ).value =
+                project.description;
+
+
+            document.getElementById(
+                    "projectTech"
+                ).value =
+                (project.tech || []).join(", ");
+
+
+            document.getElementById(
+                    "projectFeatures"
+                ).value =
+                (project.features || []).join("\n");
+
+
+            document.getElementById(
+                    "projectPrice"
+                ).value =
+                project.price || "";
+
+
+            document.getElementById(
+                    "projectDuration"
+                ).value =
+                project.duration || "";
+
+
+            document.getElementById(
+                    "projectLink"
+                ).value =
+                project.link || "";
+
+        }
+
+
+        /* =========================================================
+           SAVE PROJECT
+        ========================================================= */
+
+        function saveProject(event) {
+
+            event.preventDefault();
+
+
+            const idValue =
+                document.getElementById(
+                    "editProjectId"
+                ).value;
+
+
+            const name =
+                document.getElementById(
+                    "projectName"
+                ).value.trim();
+
+
+            const icon =
+                document.getElementById(
+                    "projectIcon"
+                ).value.trim();
+
+
+            const short =
+                document.getElementById(
+                    "projectShort"
+                ).value.trim();
+
+
+            const description =
+                document.getElementById(
+                    "projectDescription"
+                ).value.trim();
+
+
+            const tech =
+                document.getElementById(
+                    "projectTech"
+                ).value
+                .split(",")
+                .map(x => x.trim())
+                .filter(Boolean);
+
+
+            const features =
+                document.getElementById(
+                    "projectFeatures"
+                ).value
+                .split("\n")
+                .map(x => x.trim())
+                .filter(Boolean);
+
+
+            const price =
+                document.getElementById(
+                    "projectPrice"
+                ).value.trim();
+
+
+            const duration =
+                document.getElementById(
+                    "projectDuration"
+                ).value.trim();
+
+
+            const link =
+                document.getElementById(
+                    "projectLink"
+                ).value.trim();
+
+
+            let projects =
+                getProjects();
+
+
+            /* EDIT */
+
+            if (idValue) {
+
+                const id =
+                    Number(idValue);
+
+
+                projects =
+                    projects.map(project => {
+
+                        if (project.id === id) {
+
+                            return {
+
+                                ...project,
+
+                                name,
+                                icon,
+                                short,
+                                description,
+                                tech,
+                                features,
+                                price,
+                                duration,
+                                link
+
+                            };
+
+                        }
+
+                        return project;
+
+                    });
+
+
+                showToast(
+                    "Project updated successfully."
+                );
+
+            }
+
+
+            /* ADD */
+            else {
+
+                const newProject = {
+
+                    id: Date.now(),
+
+                    name,
+
+                    icon: icon || "💻",
+
+                    short,
+
+                    description,
+
+                    tech,
+
+                    features,
+
+                    price,
+
+                    duration,
+
+                    link
+
+                };
+
+
+                projects.push(newProject);
+
+
+                showToast(
+                    "Project added successfully."
+                );
+
+            }
+
+
+            saveProjects(projects);
+
+            renderProjects();
+
+            renderAdmin();
+
+            cancelProjectForm();
+
+        }
+
+
+        /* =========================================================
+           CANCEL FORM
+        ========================================================= */
+
+        function cancelProjectForm() {
+
+            document
+                .getElementById(
+                    "adminProjectForm"
+                )
+                .classList.add("hidden");
+
+        }
+
+
+        /* =========================================================
+           DELETE PROJECT
+        ========================================================= */
+
+        function deleteProject(id) {
+
+            const project =
+                getProjects().find(
+                    p => p.id === Number(id)
+                );
+
+            if (!project)
+                return;
+
+
+            const confirmDelete =
+                confirm(
+                    `Are you sure you want to delete "${project.name}"?`
+                );
+
+
+            if (!confirmDelete)
+                return;
+
+
+            const projects =
+                getProjects().filter(
+                    p => p.id !== Number(id)
+                );
+
+
+            saveProjects(projects);
+
+            renderProjects();
+
+            renderAdmin();
+
+            showToast(
+                "Project deleted."
+            );
+
+        }
+
+
+        /* =========================================================
+           CONTACT FORM
+        ========================================================= */
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById(
+                    "contactName"
+                ).value.trim();
+
+
+            showToast(
+                `Thank you ${name}! Your message form was submitted.`
+            );
+
+
+            event.target.reset();
+
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================= */
+
+        function toggleMenu() {
+
+            document
+                .getElementById("navLinks")
+                .classList.toggle("open");
+
+        }
+
+
+        function closeMenu() {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("open");
+
+        }
+
+
+        /* =========================================================
+           TOAST
+        ========================================================= */
+
+        let toastTimer;
+
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById("toast");
+
+
+            toast.textContent = message;
+
+            toast.classList.add("show");
+
+
+            clearTimeout(toastTimer);
+
+
+            toastTimer =
+                setTimeout(
+                    () => {
+                        toast.classList.remove("show");
+                    },
+                    3000
+                );
+
+        }
+
+
+        /* =========================================================
+           YEAR
+        ========================================================= */
+
+        document.getElementById(
+                "year"
+            ).textContent =
+            new Date().getFullYear();
+
+
+        /* =========================================================
+           START WEBSITE
+        ========================================================= */
+
+        renderProjects();
+    </script>
+
+</body>
+
+</html>
